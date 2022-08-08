@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BugTracker.Domain", "BugTracker.Domain", "{9E46CEC6-BE4A-46D9-B9D2-9B805D9CB992}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BugTracker.Domain", "BugTracker.Domain\BugTracker.Domain.csproj", "{D2BBD603-FF16-4C9A-8CA4-F35DC0275E8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BugTracker.Domain", "BugTracker.Domain\BugTracker.Domain.csproj", "{D2BBD603-FF16-4C9A-8CA4-F35DC0275E8A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BugTracker.Application", "BugTracker.Application", "{128F6190-EF30-416C-805E-FABB802C770A}"
 EndProject
@@ -15,9 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BugTracker.Tests", "BugTrac
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BugTracker.WebApi", "BugTracker.WebApi", "{4A7DAD67-E9FE-48FC-A61D-48CE9A1675E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BugTracker.Application", "BugTracker.Application\BugTracker.Application.csproj", "{2F0BD578-B426-4673-8C95-1DEF6B6EB73E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BugTracker.Application", "BugTracker.Application\BugTracker.Application.csproj", "{2F0BD578-B426-4673-8C95-1DEF6B6EB73E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BugTracker.Persistence", "BugTracker.Persistence\BugTracker.Persistence.csproj", "{2DF3DA6A-8E51-4713-AE96-7F188DF6AD94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BugTracker.Persistence", "BugTracker.Persistence\BugTracker.Persistence.csproj", "{2DF3DA6A-8E51-4713-AE96-7F188DF6AD94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BugTracker.WebApi", "BugTracker.WebApi\BugTracker.WebApi.csproj", "{D965BDF7-9C11-4B0D-995E-C08F195EF082}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{2DF3DA6A-8E51-4713-AE96-7F188DF6AD94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DF3DA6A-8E51-4713-AE96-7F188DF6AD94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DF3DA6A-8E51-4713-AE96-7F188DF6AD94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D965BDF7-9C11-4B0D-995E-C08F195EF082}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D965BDF7-9C11-4B0D-995E-C08F195EF082}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D965BDF7-9C11-4B0D-995E-C08F195EF082}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D965BDF7-9C11-4B0D-995E-C08F195EF082}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,6 +51,7 @@ Global
 		{D2BBD603-FF16-4C9A-8CA4-F35DC0275E8A} = {9E46CEC6-BE4A-46D9-B9D2-9B805D9CB992}
 		{2F0BD578-B426-4673-8C95-1DEF6B6EB73E} = {128F6190-EF30-416C-805E-FABB802C770A}
 		{2DF3DA6A-8E51-4713-AE96-7F188DF6AD94} = {C806FC38-57BD-4473-AE8F-00616E01A18A}
+		{D965BDF7-9C11-4B0D-995E-C08F195EF082} = {4A7DAD67-E9FE-48FC-A61D-48CE9A1675E1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {26CEB715-6EA9-4A17-BB99-3E79937A2FF9}
