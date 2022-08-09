@@ -3,6 +3,7 @@ using System.Reflection;
 using BugTracker.Application.Common.Mappings;
 using BugTracker.Application.Interfaces;
 using BugTracker.Application;
+using BugTracker.WebApi.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,6 +40,7 @@ using (var scope = app.Services.CreateScope())
     catch (Exception ex) { }
 }
 
+app.UseCustomExceptionHandler();
 app.UseRouting();
 app.UseHttpsRedirection();
 app.UseCors("AllowAll");
