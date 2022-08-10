@@ -1,4 +1,5 @@
-﻿namespace BugTracker.Persistence
+﻿
+namespace BugTracker.Persistence
 {
     public class DbIntilializer
     {

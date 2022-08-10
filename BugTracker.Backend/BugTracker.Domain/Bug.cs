@@ -23,6 +23,7 @@ namespace BugTracker.Domain
     public class Bug
     {
         public Guid Id { get; set; }
+        public Guid ProjectId { get; set; }
         public Guid AuthorId { get; set; }
         public Guid ExecutorId { get; set; }
         public string Title { get; set; }
@@ -31,6 +32,5 @@ namespace BugTracker.Domain
         public Status Status { get; set; }
         public DateTime CreationDate { get; set; }
         public DateTime? EditDate { get; set; }
-        //TODO: Add company id
     }
 }

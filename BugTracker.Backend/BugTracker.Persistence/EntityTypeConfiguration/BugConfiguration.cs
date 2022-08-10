@@ -11,7 +11,8 @@ namespace BugTracker.Persistence.EntityTypeConfiguration
         {
             builder.HasKey(x => x.Id);
             builder.HasIndex(x => x.Id).IsUnique();
-            builder.Property(x => x.Description).HasMaxLength(250);
+            builder.Property(x => x.Title).HasMaxLength(250);
+            builder.Property(x => x.Description).HasMaxLength(1000);
             builder.Property(x => x.Status)
                 .HasConversion(x => x.ToString(), x => Enum.Parse<Status>(x));
             builder.Property(x => x.Priority)
