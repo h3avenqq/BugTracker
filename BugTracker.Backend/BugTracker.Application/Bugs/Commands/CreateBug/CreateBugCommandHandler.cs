@@ -10,9 +10,9 @@ namespace BugTracker.Application.Bugs.Commands.CreateBug
     public class CreateBugCommandHandler
         : IRequestHandler<CreateBugCommand, Guid>
     {
-        private readonly IBugsDbContext _dbContext;
+        private readonly IBugTrackerDbContext _dbContext;
 
-        public CreateBugCommandHandler(IBugsDbContext dbContext)
+        public CreateBugCommandHandler(IBugTrackerDbContext dbContext)
         {
             _dbContext = dbContext;
         }

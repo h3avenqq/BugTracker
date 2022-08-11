@@ -10,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAutoMapper(config =>
 {
     config.AddProfile(new AssemblyMappingProfile(Assembly.GetExecutingAssembly()));
-    config.AddProfile(new AssemblyMappingProfile(typeof(IBugsDbContext).Assembly));
+    config.AddProfile(new AssemblyMappingProfile(typeof(IBugTrackerDbContext).Assembly));
 });
 
 builder.Services.AddApplication();
@@ -34,10 +34,13 @@ using (var scope = app.Services.CreateScope())
     var serviceProvider = scope.ServiceProvider;
     try
     {
-        var context = serviceProvider.GetRequiredService<BugsDbContext>();
+        var context = serviceProvider.GetRequiredService<BugTrackerDbContext>();
         DbIntilializer.Initilize(context);
     }
-    catch (Exception ex) { }
+    catch (Exception ex) 
+    {
+        Console.WriteLine(ex.Message);
+    }
 }
 
 app.UseCustomExceptionHandler();

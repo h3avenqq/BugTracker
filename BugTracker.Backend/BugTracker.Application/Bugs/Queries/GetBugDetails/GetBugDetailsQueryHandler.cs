@@ -11,10 +11,10 @@ namespace BugTracker.Application.Bugs.Queries.GetBugDetails
     public class GetBugDetailsQueryHandler
         : IRequestHandler<GetBugDetailsQuery, BugDetailsVm>
     {
-        private readonly IBugsDbContext _dbContext;
+        private readonly IBugTrackerDbContext _dbContext;
         private readonly IMapper _mapper;
 
-        public GetBugDetailsQueryHandler(IBugsDbContext dbContext, IMapper mapper)
+        public GetBugDetailsQueryHandler(IBugTrackerDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
             _mapper = mapper;

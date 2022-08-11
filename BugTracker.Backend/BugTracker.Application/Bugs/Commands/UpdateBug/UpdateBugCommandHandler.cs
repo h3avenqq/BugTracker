@@ -11,9 +11,9 @@ namespace BugTracker.Application.Bugs.Commands.UpdateBug
 {
     public class UpdateBugCommandHandler : IRequestHandler<UpdateBugCommand>
     {
-        private readonly IBugsDbContext _dbContext;
+        private readonly IBugTrackerDbContext _dbContext;
 
-        public UpdateBugCommandHandler(IBugsDbContext dbContext)
+        public UpdateBugCommandHandler(IBugTrackerDbContext dbContext)
         {
             _dbContext = dbContext;
         }

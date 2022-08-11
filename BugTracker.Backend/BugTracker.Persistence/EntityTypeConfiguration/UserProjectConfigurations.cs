@@ -8,7 +8,7 @@ namespace BugTracker.Persistence.EntityTypeConfiguration
     {
         public void Configure(EntityTypeBuilder<UserProject> builder)
         {
-            
+            builder.HasNoKey();
         }
     }
 }

@@ -9,9 +9,9 @@ namespace BugTracker.Application.Bugs.Commands.DeleteBug
 {
     public class DeleteBugCommandHandler : IRequestHandler<DeleteBugCommand>
     {
-        private readonly IBugsDbContext _dbContext;
+        private readonly IBugTrackerDbContext _dbContext;
 
-        public DeleteBugCommandHandler(IBugsDbContext dbContext)
+        public DeleteBugCommandHandler(IBugTrackerDbContext dbContext)
         {
             _dbContext = dbContext;
         }
