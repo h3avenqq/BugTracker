@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-
+﻿
 namespace BugTracker.Persistence
 {
     public class DbIntilializer

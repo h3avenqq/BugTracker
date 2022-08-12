@@ -7,6 +7,5 @@ namespace BugTracker.Application.Bugs.Commands.DeleteBug
     {
         public Guid Id { get; set; }
         public Guid AuthorId { get; set; }
-
     }
 }
