@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using BugTracker.Application.Bugs.Commands.CreateBug;
-using BugTracker.Application.Bugs.Commands.DeleteBug;
-using BugTracker.Application.Bugs.Commands.UpdateBug;
-using BugTracker.Application.Bugs.Queries.GetBugDetails;
-using BugTracker.Application.Bugs.Queries.GetBugList;
+using BugTracker.Application.SQRS.Bugs.Commands.CreateBug;
+using BugTracker.Application.SQRS.Bugs.Commands.DeleteBug;
+using BugTracker.Application.SQRS.Bugs.Commands.UpdateBug;
+using BugTracker.Application.SQRS.Bugs.Queries.GetBugDetails;
+using BugTracker.Application.SQRS.Bugs.Queries.GetBugList;
 using BugTracker.WebApi.Models;
 using Microsoft.AspNetCore.Mvc;
 
