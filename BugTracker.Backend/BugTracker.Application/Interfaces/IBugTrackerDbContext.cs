@@ -10,7 +10,7 @@ namespace BugTracker.Application.Interfaces
     {
         DbSet<Bug> Bugs { get; set; }
         DbSet<Project> Projects { get; set; }
-        DbSet<UserProject> UsersProjects { get; set; }
+        DbSet<User_Project> Users_Projects { get; set; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }

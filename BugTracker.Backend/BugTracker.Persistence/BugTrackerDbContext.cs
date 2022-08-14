@@ -12,7 +12,7 @@ namespace BugTracker.Persistence
 
         public DbSet<Bug> Bugs { get; set; }
         public DbSet<Project> Projects { get; set; }
-        public DbSet<UserProject> UsersProjects { get; set; }
+        public DbSet<User_Project> Users_Projects { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
