@@ -3,6 +3,7 @@ using BugTracker.Identity.Data;
 using BugTracker.Identity.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,12 +31,14 @@ builder.Services.AddIdentityServer()
     .AddInMemoryClients(Configuration.Clients)
     .AddDeveloperSigningCredential();
 
-builder.Services.ConfigureApplicationCookie(config=>
+builder.Services.ConfigureApplicationCookie(config =>
 {
     config.Cookie.Name = "BugTracker.Identity.Coockie";
-    config.LoginPath = "Auth/Login";
-    config.LogoutPath = "Auth/Logout";
-})
+    config.LoginPath = "/Auth/Login";
+    config.LogoutPath = "/Auth/Logout";
+});
+
+builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
@@ -54,8 +57,17 @@ using (var scope = app.Services.CreateScope())
     }
 }
 
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(
+        Path.Combine(Directory.GetCurrentDirectory(), "Styles")),
+    RequestPath = "/styles"
+});
 app.UseRouting();
 app.UseIdentityServer();
-app.MapGet("/", () => "Hello World!");
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapDefaultControllerRoute();
+});
 
 app.Run();
