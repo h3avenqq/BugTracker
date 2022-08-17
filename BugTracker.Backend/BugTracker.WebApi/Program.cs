@@ -4,6 +4,7 @@ using BugTracker.Application.Common.Mappings;
 using BugTracker.Application.Interfaces;
 using BugTracker.Application;
 using BugTracker.WebApi.Middleware;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +28,18 @@ builder.Services.AddCors(options =>
     });
 });
 
+builder.Services.AddAuthentication(config =>
+{
+    config.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    config.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+    .AddJwtBearer("Bearer", options =>
+    {
+        options.Authority = "http://localhost:5172";
+        options.Audience = "BugTrackerWebAPI";
+        options.RequireHttpsMetadata = false;
+    });
+
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
@@ -47,6 +60,8 @@ app.UseCustomExceptionHandler();
 app.UseRouting();
 app.UseHttpsRedirection();
 app.UseCors("AllowAll");
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.UseEndpoints(endpoints =>
 {

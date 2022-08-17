@@ -5,6 +5,7 @@ using BugTracker.Application.SQRS.Bugs.Commands.UpdateBug;
 using BugTracker.Application.SQRS.Bugs.Queries.GetBugDetails;
 using BugTracker.Application.SQRS.Bugs.Queries.GetBugList;
 using BugTracker.WebApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BugTracker.WebApi.Controllers
@@ -20,6 +21,7 @@ namespace BugTracker.WebApi.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<BugListVm>> GetAll()
         {
             var query = new GetBugListQuery();
@@ -29,6 +31,7 @@ namespace BugTracker.WebApi.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<ActionResult<BugDetailsVm>> Get(Guid id)
         {
             var query = new GetBugDetailsQuery
@@ -41,6 +44,7 @@ namespace BugTracker.WebApi.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<Guid>> Create([FromBody] CreateBugDto createBugDto)
         {
             var command = _mapper.Map<CreateBugCommand>(createBugDto);
@@ -51,6 +55,7 @@ namespace BugTracker.WebApi.Controllers
         }
 
         [HttpPut]
+        [Authorize]
         public async Task<IActionResult> Update([FromBody] UpdateBugDto updateBugDto)
         {
             var command = _mapper.Map<UpdateBugCommand>(updateBugDto);
@@ -61,6 +66,7 @@ namespace BugTracker.WebApi.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize]
         public async Task<IActionResult> Delete(Guid id)
         {
             var command = new DeleteBugCommand

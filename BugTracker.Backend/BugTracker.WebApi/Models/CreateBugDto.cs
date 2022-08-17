@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using BugTracker.Application.Bugs.Commands.CreateBug;
+using BugTracker.Application.SQRS.Bugs.Commands.CreateBug;
 using BugTracker.Application.Common.Mappings;
 using BugTracker.Domain;
 
