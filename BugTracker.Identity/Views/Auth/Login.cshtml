@@ -1,7 +1,4 @@
 ﻿@model LoginViewModel
-<head>
-	@*<link href=@Url.Content("~/Styles/styles.css") rel="stylesheet" type="text/css"/>*@
-</head>
 
 <form asp-controller="Auth" asp-action="Login" method="post">
 	<input type="hidden" asp-for="ReturnUrl" />
@@ -22,5 +19,5 @@
 		<button type="submit" class="button">Sign In</button>
 	</div>
 	 <a asp-controller="Auth" asp-action="Register"
-	   asp-route-returnUrl="@Model.ReturnUrl" class="switch-button">Register</a>
+       asp-route-returnUrl="@Model.ReturnUrl" class="switch-button">Register</a>
 </form>

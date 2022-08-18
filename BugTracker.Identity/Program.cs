@@ -14,10 +14,10 @@ builder.Services.AddDbContext<AuthDbContext>(options=>
 
 builder.Services.AddIdentity<User, IdentityRole>(config =>
 {
-    config.Password.RequiredLength = 8;
-    config.Password.RequireDigit = true;
-    config.Password.RequireLowercase = true;
-    config.Password.RequireUppercase = true;
+    config.Password.RequiredLength = 4;
+    config.Password.RequireDigit = false;
+    config.Password.RequireLowercase = false;
+    config.Password.RequireUppercase = false;
     config.Password.RequireNonAlphanumeric = false;
 })
     .AddEntityFrameworkStores<AuthDbContext>()

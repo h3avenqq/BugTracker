@@ -35,7 +35,7 @@ namespace BugTracker.Identity.Controlles
             if(!ModelState.IsValid)
                 return View(viewModel);
 
-            var user = await _userManager.FindByEmailAsync(viewModel.Email);
+            var user = await _userManager.FindByNameAsync(viewModel.Email);
 
             if(user == null)
             {
@@ -57,7 +57,7 @@ namespace BugTracker.Identity.Controlles
         [HttpGet]
         public IActionResult Register(string returnUrl)
         {
-            var viewModel = new LoginViewModel
+            var viewModel = new RegisterViewModel
             {
                 ReturnUrl = returnUrl
             };
@@ -72,7 +72,10 @@ namespace BugTracker.Identity.Controlles
 
             var user = new User
             {
-                Email = viewModel.Email
+                Email = viewModel.Email,
+                UserName = viewModel.Email,
+                FirstName = viewModel.FirstName,
+                LastName = viewModel.LastName
             };
 
             var result = await _userManager.CreateAsync(user, viewModel.Password);
@@ -80,7 +83,7 @@ namespace BugTracker.Identity.Controlles
             if (result.Succeeded)
             {
                 await _signInManager.SignInAsync(user, false);
-                return Redirect(viewModel.ReturnUrl);
+                return Redirect("/");
             }
 
             ModelState.AddModelError(string.Empty, "Register error are occurred.");
