@@ -9,6 +9,8 @@ namespace BugTracker.Application.SQRS.Bugs.Queries.GetBugDetails
         {
             RuleFor(getBugDetailsQuery =>
                 getBugDetailsQuery.Id).NotEqual(Guid.Empty);
+            RuleFor(GetBugDetailsQuery =>
+                GetBugDetailsQuery.UserId).NotEqual(Guid.Empty);
         }
     }
 }

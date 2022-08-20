@@ -25,7 +25,7 @@ namespace BugTracker.Application.SQRS.Projects.Commands.DeleteProject
             var entity = await _dbContext.Projects
                 .FindAsync(new object[] { request.Id });
 
-            if (entity == null || entity.AdminId != request.UserId)
+            if (entity == null || entity.AdminId != request.UserId)//think about new exception to 2nd condition
                 throw new NotFoundException(nameof(Project), request.Id);
 
             _dbContext.Projects.Remove(entity);
