@@ -61,7 +61,7 @@ app.UseStaticFiles(new StaticFileOptions
 {
     FileProvider = new PhysicalFileProvider(
         Path.Combine(Directory.GetCurrentDirectory(), "Styles")),
-    RequestPath = "/styles"
+    RequestPath = "/style"
 });
 app.UseRouting();
 app.UseIdentityServer();
